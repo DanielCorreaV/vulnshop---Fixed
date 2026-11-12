@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="miel">
+<head>
+<title>Librería del Puerto - VulnShop Lab</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://covers.openlibrary.org https://*.archive.org data:; connect-src https://openlibrary.org; object-src 'none'; base-uri 'none'; form-action 'self'">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="index.html">Librería del Puerto</a>
+  <nav class="nav" id="nav">
+    <a href="index.html">Inicio</a>
+    <a href="index.html#catalogo">Catálogo</a>
+    <a href="favoritos.html">Favoritos <span class="badge" id="badge">0</span></a>
+    <a href="index.html#visitas">Visitas</a>
+    <a href="login.html">Ingresar</a>
+  </nav>
+  <div class="themes" role="group" aria-label="Tema de color">
+    <button data-theme="miel" title="Miel" aria-label="Tema miel"></button>
+    <button data-theme="coral" title="Coral" aria-label="Tema coral"></button>
+    <button data-theme="salvia" title="Salvia" aria-label="Tema salvia"></button>
+  </div>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
+</header>
+<main>
+  <section class="hero">
+    <div id="welcome"></div>
+    <h1>Libros usados con historia propia</h1>
+    <p class="lead">Busca entre millones de títulos y guarda los que quieres leer.</p>
+    <form class="search" method="GET" action="index.html">
+      <input type="text" name="q" placeholder="Título, autor o tema" aria-label="Buscar libros">
+      <button>Buscar</button>
+    </form>
+    <div class="chips">
+      <a href="index.html?q=novela">Novela</a>
+      <a href="index.html?q=poesia">Poesía</a>
+      <a href="index.html?q=historia">Historia</a>
+      <a href="index.html?q=ciencia">Ciencia</a>
+      <a href="index.html?q=cocina">Cocina</a>
+    </div>
+  </section>
+
+  <section id="catalogo">
+    <h2>Catálogo</h2>
+    <div id="results"></div>
+    <div id="catalog" class="grid"></div>
+    <p id="count" class="count"></p>
+    <button id="more" class="ghost more" hidden>Cargar más</button>
+  </section>
+
+  <section id="visitas">
+    <h2>Libro de visitas</h2>
+    <div class="note-form">
+      <input type="text" id="gb-name" placeholder="Tu nombre" aria-label="Nombre">
+      <textarea id="gb-msg" placeholder="Deja un mensaje" aria-label="Mensaje"></textarea>
+      <button id="gb-send">Publicar</button>
+    </div>
+    <div id="guestbook" class="notes"></div>
+  </section>
+</main>
+<footer>
+  <span>Versión corregida de VulnShop Lab (proyecto educativo).</span>
+  <a href="https://example.org" target="_blank" rel="noopener noreferrer">Proveedor</a>
+</footer>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
